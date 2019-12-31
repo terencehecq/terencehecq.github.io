@@ -93,23 +93,8 @@ header{
         user-select: none;
     }
 
-    .links{
-        display:inline-flex;
-        justify-content: space-evenly;
-        z-index: 100;
-    }
-
-    .links a{
-        font-size: 3em;
-        margin:30px;
-        color: #9dfff3;
-        text-shadow: 0 0 20px #09394d;
-
-        &:hover{
-            color: #9dfff3;
-            text-shadow: 0 0 7px rgba(0, 247, 255, 0.4);
-
-        }
+    p{
+        color:white;
     }
 
     .down{

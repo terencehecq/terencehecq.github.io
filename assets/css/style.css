@@ -133,26 +133,8 @@ header h1 {
           user-select: none;
 }
 
-header .links {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  z-index: 100;
-}
-
-header .links a {
-  font-size: 3em;
-  margin: 30px;
-  color: #9dfff3;
-  text-shadow: 0 0 20px #09394d;
-}
-
-header .links a:hover {
-  color: #9dfff3;
-  text-shadow: 0 0 7px rgba(0, 247, 255, 0.4);
+header p {
+  color: white;
 }
 
 header .down {
