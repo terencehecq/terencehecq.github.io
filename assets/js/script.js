@@ -32,9 +32,9 @@ function generateWork(imgFileName, imgAlt, gitHubUrl, workUrl, title, techs ){
 
 }
 
-generateWork("burger.png", "Bear burger", "https://github.com/terencehecq/restaurant-css-framework", "https://terencehecq.github.io/restaurant-css-framework/", "Bear Burger", ['css', 'html'] )
-generateWork("burger.png", "Bear burger", "https://github.com/terencehecq/restaurant-css-framework", "https://terencehecq.github.io/restaurant-css-framework/", "Bear Burger", ['css', 'html'] )
-generateWork("burger.png", "Bear burger", "https://github.com/terencehecq/restaurant-css-framework", "https://terencehecq.github.io/restaurant-css-framework/", "Bear Burger", ['css', 'html'] )
+// generateWork("burger.png", "Bear burger", "https://github.com/terencehecq/restaurant-css-framework", "https://terencehecq.github.io/restaurant-css-framework/", "Bear Burger", ['css', 'html'] )
+// generateWork("burger.png", "Bear burger", "https://github.com/terencehecq/restaurant-css-framework", "https://terencehecq.github.io/restaurant-css-framework/", "Bear Burger", ['css', 'html'] )
+// generateWork("burger.png", "Bear burger", "https://github.com/terencehecq/restaurant-css-framework", "https://terencehecq.github.io/restaurant-css-framework/", "Bear Burger", ['css', 'html'] )
 
 
 
