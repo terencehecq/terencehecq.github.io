@@ -115,10 +115,6 @@ header h2 {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 0 5px #09394d;
   z-index: 100;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 header h1 {
@@ -213,9 +209,37 @@ section {
 
 section h2 {
   font-size: 4rem;
-  margin: 5% auto 3%;
+  margin: 8% auto;
   text-align: center;
   color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+section .aboutme {
+  width: 70%;
+  margin: auto;
+}
+
+section p {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact {
+  min-height: 50vh;
+  height: 50vh;
 }
 
 .cards {
@@ -230,7 +254,7 @@ section h2 {
 
 .cards .card {
   width: 30%;
-  min-width: 320px;
+  min-width: 350px;
   height: 15rem;
   margin: 2% 1%;
   border-radius: 5px;
@@ -252,6 +276,10 @@ section h2 {
 .cards .card:hover .text {
   -webkit-transform: translateY(-45%);
           transform: translateY(-45%);
+}
+
+.cards .card:hover .pic .visit {
+  background-color: #eeeeeebb;
 }
 
 .cards .card .pic {
@@ -283,6 +311,8 @@ section h2 {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   color: #999;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .cards .card .pic .visit a {
