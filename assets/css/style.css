@@ -27,8 +27,8 @@ nav {
   display: -ms-flexbox;
   display: flex;
   height: 10vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(16, 18, 37, 0.9)), to(rgba(16, 18, 37, 0)));
+  background: linear-gradient(180deg, rgba(16, 18, 37, 0.9) 20%, rgba(16, 18, 37, 0) 100%);
   width: 100%;
 }
 
@@ -50,7 +50,8 @@ nav ul {
 
 nav ul a {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 
 nav ul a:hover {
@@ -143,6 +144,7 @@ header .down {
   -webkit-animation: eyeCatch 2s infinite;
           animation: eyeCatch 2s infinite;
   z-index: 100;
+  cursor: pointer;
 }
 
 @-webkit-keyframes eyeCatch {
@@ -240,6 +242,16 @@ section p {
 .contact {
   min-height: 50vh;
   height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cards {
