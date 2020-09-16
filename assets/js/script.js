@@ -41,7 +41,9 @@ function generateWork(imgFileName, imgAlt, gitHubUrl, workUrl, title, techs ){
 // Smooth scroll 
 
 // Elements which trigger smooth scroll
+const logoLink = document.getElementById("logoLink")
 const down = document.getElementById("down");
+const skillsLink = document.getElementById("skillsLink");
 const homeLink = document.getElementById("homeLink");
 const aboutLink = document.getElementById("aboutLink");
 const myWorkLink = document.getElementById("myWorkLink");
@@ -51,13 +53,16 @@ const contactLink = document.getElementById("contactLink");
 const aboutPos = document.getElementById("about").offsetTop;
 const workPos = document.getElementById("myWork").offsetTop;
 const contactPos = document.getElementById("contact").offsetTop;
+const skillsPos = document.getElementById("skills").offsetTop;
 
 const smoothElems = [
-    [down, aboutPos-100],
+    [logoLink, 0],
+    [down, skillsPos-100],
     [homeLink, 0],
+    [skillsLink, skillsPos],
     [aboutLink, aboutPos-100],
     [myWorkLink, workPos-300],
-    [contactLink, contactPos-450],
+    [contactLink, contactPos],
 ]
 
 smoothElems.forEach((item) => {
@@ -66,3 +71,23 @@ smoothElems.forEach((item) => {
         window.scrollTo({top: item[1], behavior: 'smooth'})
     })
 })
+
+
+
+let burgerButton = document.querySelector("#burger>button");
+let menu = document.querySelector("nav>ul");
+
+burgerButton.addEventListener("click", ()=>{
+    menu.classList.toggle("visible")
+    burgerButton.classList.toggle("is-active")
+})
+
+
+// burger.addEventListener("click", ()=>{
+//     menu.classList.toggle("visible")
+
+//     menu.classList.contains("visible") ? burger.innerHTML = `<i class="fas fa-times"></i>`: burger.innerHTML = `<i class="fas fa-bars"></i>`
+// })
+
+// menu.classList.contains("visible") ? burger.innerHTML = `<i class="fas fa-times"></i>`: burger.innerHTML = `<i class="fas fa-bars"></i>`
+
