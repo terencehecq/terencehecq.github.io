@@ -1,11 +1,14 @@
 @import 'reset';
 @import 'hamburgers/hamburgers.scss';
 
+$green: rgb(122, 191, 126);
+$faded_green: rgba(122, 191, 126, 0.6);
+
 
 
 /* ------- Début du code de la page ------- */
 
-body{font-family: 'Ubuntu', sans-serif;}
+body{font-family: 'Titillium Web', sans-serif;}
 
 nav{
     position:fixed;
@@ -14,8 +17,7 @@ nav{
     display:flex;
     justify-content: space-between;
     height: 12vh;
-    // background: linear-gradient(180deg, rgba(16, 18, 37, 0.9) 20%, rgba(16, 18, 37, 0) 100%);
-    background-color: rgb(122, 191, 126);
+    background-color: $green;
     width:100%;
     z-index:100;
 
@@ -24,10 +26,8 @@ nav{
         align-self: center;
         z-index:102;
         margin-left: 15px;
-
     }
 
-    
     ul{
         position: absolute;
         top: 11.5vh;
@@ -38,23 +38,23 @@ nav{
         z-index: 90;
         transition: all .3s ease-in-out;
         padding-bottom: 10px;
-        background-color: rgb(122, 191, 126);
-
+        background-color: $green;
         li{
             margin: 20px 0;
         }
         a{
             position: relative;
             color:white;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             cursor: pointer;
             z-index: 90;
-            padding: 8px 2px;
+            padding: 5px;
+            font-weight: 200;
             &::after{
                 content : "";
                 position : absolute;
                 width : 100%;
-                height : 3px;
+                height : 2px;
                 background-color: white;
                 bottom: 0;
                 left: 0;
@@ -65,8 +65,6 @@ nav{
                 transform: scaleX(1);
             }
         }
-        
-
     }
 
     ul.visible{
@@ -74,7 +72,6 @@ nav{
         right: 0;
         z-index: 90;
         border-radius: 0 0 20px 20px;
-        
     }
 
     #burger{
@@ -87,122 +84,114 @@ nav{
     }
 }
 
-#myPic{
-    width: 200px;
-}
-
-#particles-js{
-    /* ---- particles.js container ---- */ 
-    position:absolute;
-    width: 100%;
-    background-color: rgb(16, 18, 37);
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: 50% 50%; 
-    z-index:-1;
-
-    canvas{
-        position: absolute;
-        top:0;
-        z-index:-1;
-    }
-}
+// #myPic{
+//     width: 200px;
+// }
 
 
 header{
     position:relative;
     width: 100%; 
-    height: 95vh; 
+    height: 50vh;
+    margin: 11.5vh 0 5vh 0;
     display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
+    justify-content: space-evenly;
+    background-color: rgb(122, 191, 126);
+    padding: 15px;
 
+    div:first-child{
+        width: 85%;
+        margin: 5% 2%;
+        
+        h1{
+            font-size: 2em;
+            font-weight: 400;
+            color:rgba(255,255,255,0.9);
+            z-index:200;
+            user-select: none;
+            margin: auto;
+            span{
+                font-weight: 700;
+            }
+        }
 
-    h2{
-        font-size: 5em;
-        margin:10px;
-        color:rgba(255, 255, 255, 0.9);
-        text-shadow: 0 0 5px #09394d;
-        z-index:100;
+        
     }
 
-    h1{
-        font-size: 2.3em;
-        margin:0 0 20px;
-        color:rgba(255,255,255,0.9);
-        text-shadow: 0 0 5px #09394d;
-        z-index:100;
-        user-select: none;
+    div.wave{
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        height: 25vh;
+        width: 100%;
+        background-image: url(../img/wave.svg);
+        background-repeat: no-repeat;
+        background-size: 105%;
+        background-position: bottom;
     }
 
-    p{
-        color:white;
-    }
-
-    .down{
-        position:absolute;
-        bottom:20px;
-        font-size: 3em;
-        left:50%;
-        color:white;
-        text-shadow: 0 0 20px #09394d;
-        animation: eyeCatch 2s infinite;
-        z-index:100;
-        cursor: pointer;
-    }
+    .down{display: none;}
 }
-
-@keyframes eyeCatch{
-    0%{transform: translateY(-3px);}
-    7%{transform: translateY(3px);}
-    15%{transform: translateY(-3px);}
-    23%{transform: translateY(3px);}
-    30%{transform: translateY(-3px);}
-    100%{transform: translateY(-3px);}
-}
-
 
 section{
-    width: 85%;
-    min-height:100vh;
-    margin: auto;
-    z-index: 1000;
-    text-align: center;
-
     h2{
-        font-size: 4rem;
-        margin: 8% auto;
-        text-align:center;
-        color:white;
-        user-select: none;
+        display: block;
+        font-size: 6em;
+        font-weight: 900;
+        color: $faded_green;
+        margin: 0 5px;
     }
 
-    .aboutme{
-        width:70%;
-        margin:auto;
-    }
+    div.containerCard{
+        margin: 0 20px 30px;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        box-shadow:  8px 8px 15px #dadada, 
+                    -8px -8px 15px #ffffff;
+        padding: 10px;
 
-    p{
-        color:white;
-        font-size: 1.3rem;
+        div:first-child{
+            position: relative;
+        }
+
+        div:first-child::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+            height: 1px;
+            width: 70%;
+            margin: auto;
+            background-color: #ccc;
+        }
+
+        h3{
+            font-weight: 200;
+            text-align: center;
+            font-size: 1.6em;
+            margin: 10px 0 0;
+        }
+
+        div.techs{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            img{
+                width: 60px;
+                margin: 15px 10px;
+            }
+
+            .filling{
+                height: 0;
+                width: 60px;
+                margin: 15px 10px;
+            }
+        }
+        
     }
 }
 
-.about{
-    display:flex;
-    align-items: center;
-}
-
-.contact{
-    min-height:50vh;
-    height:50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-// Cards
 .cards{
     display:flex;
     flex-wrap: wrap;
@@ -216,7 +205,7 @@ section{
         border-radius: 5px;
         overflow: hidden;
         background-color: rgb(16, 18, 37);
-        z-index:200;
+        z-index:80;
         transition: all 0.5s ease-in-out; 
         box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
     
@@ -298,49 +287,28 @@ section{
     }
 }
 
-.links a{
-    color:white;
-    font-size: 4rem;
-    margin:1rem;
 
-    &:hover{
-        color:#1aa1aa;
-    }
+
+
+
+@keyframes eyeCatch{
+    0%{transform: translateY(-3px);}
+    7%{transform: translateY(3px);}
+    15%{transform: translateY(-3px);}
+    23%{transform: translateY(3px);}
+    30%{transform: translateY(-3px);}
+    100%{transform: translateY(-3px);}
 }
 
 
-
-form{
-    width:60%;
-    margin:3vh auto;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .form-row{
-        margin: 2%;
-        display:flex;
-        justify-content: space-between;
-
-        input, textarea{
-            width:100%;
-            line-height: 2rem;
-            font-size: 1rem;
-            border-radius: 5px;
-            padding:3px 5px;
-        }
-    }
-
-    .form-row-dbl input{
-        width:48%;
-    }
-
-    button{
-        width:60px;
-        height:60px;
-        font-size: 2rem;
-        border-radius: 50%;
-        align-self:center;
-        margin-top:3%;
-    }
+header .down{
+    position:absolute;
+    bottom:-7vh;
+    font-size: 3em;
+    left:48%;
+    color: $green;
+    text-shadow: 1px 2px 8px #ccc;
+    animation: eyeCatch 2s infinite;
+    z-index:99;
+    cursor: pointer;
 }
