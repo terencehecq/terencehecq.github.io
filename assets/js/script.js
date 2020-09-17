@@ -59,9 +59,9 @@ const smoothElems = [
     [logoLink, 0],
     [down, skillsPos-100],
     [homeLink, 0],
-    [skillsLink, skillsPos],
-    [aboutLink, aboutPos-100],
-    [myWorkLink, workPos-300],
+    [skillsLink, skillsPos-100],
+    [aboutLink, aboutPos-90],
+    [myWorkLink, workPos+40],
     [contactLink, contactPos],
 ]
 

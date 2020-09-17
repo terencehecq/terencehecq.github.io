@@ -242,11 +242,16 @@ nav #burger button {
   outline: none;
 }
 
+.container {
+  width: 100%;
+  margin-top: 11.5vh;
+}
+
 header {
   position: relative;
   width: 100%;
   height: 50vh;
-  margin: 11.5vh 0 5vh 0;
+  margin-bottom: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,15 +305,16 @@ section h2 {
   font-weight: 900;
   color: rgba(122, 191, 126, 0.6);
   margin: 0 5px;
+  line-height: .8em;
 }
 
 section div.containerCard {
-  margin: 0 20px 30px;
+  margin: 0 20px 50px;
   background-color: #f8f8f8;
-  border-radius: 5px;
+  border-radius: 10px;
   -webkit-box-shadow: 8px 8px 15px #dadada,  -8px -8px 15px #ffffff;
           box-shadow: 8px 8px 15px #dadada,  -8px -8px 15px #ffffff;
-  padding: 10px;
+  padding: 20px 15px;
 }
 
 section div.containerCard div:first-child {
@@ -319,9 +325,9 @@ section div.containerCard div:first-child::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 15%;
+  left: 25%;
   height: 1px;
-  width: 70%;
+  width: 50%;
   margin: auto;
   background-color: #ccc;
 }
@@ -355,6 +361,39 @@ section div.containerCard div.techs .filling {
   margin: 15px 10px;
 }
 
+section div.containerCard .about p {
+  color: #555;
+}
+
+section div.containerCard.links {
+  text-align: center;
+}
+
+section div.containerCard.links a {
+  display: inline-block;
+  font-size: 4em;
+  margin: 20px;
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+}
+
+section div.containerCard.links #github {
+  color: black;
+}
+
+section div.containerCard.links #linkedin {
+  color: #0073b1;
+}
+
+section div.containerCard.links a:hover {
+  display: inline-block;
+  opacity: .7;
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+}
+
 .cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,10 +402,11 @@ section div.containerCard div.techs .filling {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin-bottom: 50px;
 }
 
 .cards .card {
-  width: 30%;
+  width: 400px;
   min-width: 350px;
   height: 15rem;
   margin: 2% 1%;
@@ -387,8 +427,8 @@ section div.containerCard div.techs .filling {
 }
 
 .cards .card:hover .text {
-  -webkit-transform: translateY(-45%);
-          transform: translateY(-45%);
+  -webkit-transform: translateY(-47%);
+          transform: translateY(-47%);
 }
 
 .cards .card:hover .pic .visit {
@@ -444,15 +484,16 @@ section div.containerCard div.techs .filling {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background-color: #eee;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
 
 .cards .card .text h2 {
   color: black;
   font-weight: 400;
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: .6rem 1rem;
   margin: 0;
 }
 
@@ -467,6 +508,141 @@ section div.containerCard div.techs .filling {
 
 .cards .card .text .tech img {
   width: 35px;
+}
+
+.cards .newCard {
+  background-color: transparent;
+  width: 350px;
+  height: 240px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  margin: 20px  auto;
+}
+
+.cards .newCard .newCard_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.cards .newCard:hover .newCard_inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.cards .newCard .front, .cards .newCard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+
+.cards .newCard .front {
+  background-color: #f8f8f8;
+  color: black;
+  -webkit-box-shadow: 4px 4px 12px #dadada,  -4px -4px 12px #ffffff;
+          box-shadow: 4px 4px 12px #dadada,  -4px -4px 12px #ffffff;
+}
+
+.cards .newCard .front img {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.cards .newCard .front h4 {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 400;
+}
+
+.cards .newCard .back {
+  background-color: #f8f8f8;
+  color: white;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-box-shadow: 4px 4px 12px #dadada,  -4px -4px 12px #ffffff;
+          box-shadow: 4px 4px 12px #dadada,  -4px -4px 12px #ffffff;
+  padding: 15px;
+}
+
+.cards .newCard .back h4 {
+  font-size: 1.4rem;
+  color: #7abf7e;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+.cards .newCard .back h5 {
+  margin: 0;
+  color: black;
+  font-weight: 200;
+  font-size: 1.1rem;
+}
+
+.cards .newCard .back .visit a {
+  font-size: 2rem;
+  color: black;
+  margin: 0 5px;
+}
+
+.cards .newCard .back .visit a:hover {
+  color: #7abf7e;
+}
+
+.cards .newCard .back .tech {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cards .newCard .back .tech img {
+  width: 40px;
+  margin: 10px;
+}
+
+.cards .fillCard {
+  width: 350px;
+  height: 0;
+  margin: 0 auto;
+}
+
+footer {
+  width: 100%;
+  height: 40px;
+  background-color: #7abf7e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer p {
+  display: inline-block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: white;
+  font-weight: 200;
 }
 
 @-webkit-keyframes eyeCatch {

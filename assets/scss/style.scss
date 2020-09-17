@@ -3,6 +3,7 @@
 
 $green: rgb(122, 191, 126);
 $faded_green: rgba(122, 191, 126, 0.6);
+$lightgrey: #f8f8f8;
 
 
 
@@ -88,12 +89,15 @@ nav{
 //     width: 200px;
 // }
 
-
+.container{
+    width: 100%;
+    margin-top: 11.5vh;
+}
 header{
     position:relative;
     width: 100%; 
     height: 50vh;
-    margin: 11.5vh 0 5vh 0;
+    margin-bottom: 5vh;
     display:flex;
     justify-content: space-evenly;
     background-color: rgb(122, 191, 126);
@@ -140,15 +144,16 @@ section{
         font-weight: 900;
         color: $faded_green;
         margin: 0 5px;
+        line-height: .8em;
     }
 
     div.containerCard{
-        margin: 0 20px 30px;
-        background-color: #f8f8f8;
-        border-radius: 5px;
+        margin: 0 20px 50px;
+        background-color: $lightgrey;
+        border-radius: 10px;
         box-shadow:  8px 8px 15px #dadada, 
                     -8px -8px 15px #ffffff;
-        padding: 10px;
+        padding: 20px 15px;
 
         div:first-child{
             position: relative;
@@ -158,9 +163,9 @@ section{
             content: "";
             position: absolute;
             bottom: 0;
-            left: 15%;
+            left: 25%;
             height: 1px;
-            width: 70%;
+            width: 50%;
             margin: auto;
             background-color: #ccc;
         }
@@ -172,6 +177,7 @@ section{
             margin: 10px 0 0;
         }
 
+        // -- TECHNOLOGIES LOGO
         div.techs{
             display: flex;
             flex-wrap: wrap;
@@ -188,6 +194,29 @@ section{
                 margin: 15px 10px;
             }
         }
+        // -- ABOUT TEXT
+        .about p{
+            color: #555
+        }
+
+        // -- CONTACT LINKS
+        &.links{
+            text-align: center;
+            a{
+                display: inline-block;
+                font-size: 4em;
+                margin: 20px;
+                transition: transform .1s ;
+            }
+            #github{color: black;}
+            #linkedin{color: #0073b1;}
+            a:hover{
+                display: inline-block;
+                opacity: .7;
+                transform: scale(.97);
+            }
+
+        }
         
     }
 }
@@ -196,9 +225,10 @@ section{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 50px;
 
     .card{
-        width:30%;
+        width:400px;
         min-width:350px;
         height:15rem;
         margin:2% 1%;
@@ -215,7 +245,7 @@ section{
                 opacity: 0.8;
             }
             .text{
-                transform:translateY(-45%);
+                transform:translateY(-47%);
             }
             .pic .visit{
                 background-color: #eeeeeebb;
@@ -264,13 +294,14 @@ section{
             position: relative;
             transition: all 0.5s ease-in-out; 
             background-color: #eee;
-            box-shadow : 0 0 5px rgba(0, 0, 0, 0.3);
+            box-shadow : 0 0 8px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
     
             h2{
                 color: black;
                 font-weight:400;
                 font-size: 1.5rem;
-                padding:1rem;
+                padding:.6rem 1rem;
                 margin:0;
             }
     
@@ -285,9 +316,114 @@ section{
         }
     
     }
+
+    .newCard{
+        background-color: transparent;
+        width: 350px;
+        height: 240px;
+        perspective: 1000px;
+        margin: 20px  auto;
+        .newCard_inner{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.7s;
+            transform-style: preserve-3d;
+        }
+        &:hover .newCard_inner {
+            transform: rotateY(180deg);
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            border-radius: 4px;
+          }
+          .front {
+            background-color: $lightgrey;
+            color: black;
+            box-shadow:  4px 4px 12px #dadada, 
+                        -4px -4px 12px #ffffff;
+            img{
+                width: 100%;
+                border-radius: 4px 4px 0 0;
+            }
+            h4{
+                position: absolute;
+                bottom: 5px;
+                left: 10px;
+                margin: 0;
+                font-size: 1.4em;
+                font-weight: 400;
+            }
+          }
+          .back {
+            background-color: $lightgrey;
+            color: white;
+            transform: rotateY(180deg);
+            box-shadow:  4px 4px 12px #dadada, 
+                        -4px -4px 12px #ffffff;
+            padding: 15px;
+            
+            h4{
+                font-size: 1.4rem;
+                color: $green;
+                font-weight: 400;
+                margin: 0 0 10px;
+            }
+            h5{
+                margin: 0;
+                color: black;
+                font-weight: 200;
+                font-size: 1.1rem;
+            }
+
+            .visit{
+                a{
+                    font-size: 2rem;
+                    color: black;
+                    margin: 0 5px;
+                    &:hover{
+                        color: $green;
+                    }
+                }
+            }
+            .tech{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                img{
+                    width: 40px;
+                    margin: 10px;
+                }
+            }            
+
+          }
+    }
+    .fillCard{
+        width: 350px;
+        height: 0;
+        margin: 0 auto;
+    }
 }
 
+footer{
+    width: 100%;
+    height: 40px;
+    background-color: $green;
+    display: flex;
+    justify-content: center;
 
+    p{
+        display: inline-block;
+        align-self: center;
+        color: white;
+        font-weight: 200;
+    }
+}
 
 
 
