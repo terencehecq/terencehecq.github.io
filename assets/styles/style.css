@@ -251,6 +251,7 @@ header {
   position: relative;
   width: 100%;
   height: 50vh;
+  min-height: 300px;
   margin-bottom: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -288,6 +289,7 @@ header div.wave {
   bottom: -10px;
   left: 0;
   height: 25vh;
+  min-height: 50px;
   width: 100%;
   background-image: url(../img/wave.svg);
   background-repeat: no-repeat;
@@ -314,14 +316,14 @@ section div.containerCard {
   border-radius: 10px;
   -webkit-box-shadow: 8px 8px 15px #dadada,  -8px -8px 15px #ffffff;
           box-shadow: 8px 8px 15px #dadada,  -8px -8px 15px #ffffff;
-  padding: 20px 15px;
+  padding: 20px;
 }
 
-section div.containerCard div:first-child {
+section div.containerCard div.web {
   position: relative;
 }
 
-section div.containerCard div:first-child::after {
+section div.containerCard div.web::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -358,11 +360,11 @@ section div.containerCard div.techs img {
 section div.containerCard div.techs .filling {
   height: 0;
   width: 60px;
-  margin: 15px 10px;
+  margin: 0 10px;
 }
 
-section div.containerCard .about p {
-  color: #555;
+section div.containerCard.about p {
+  color: #333;
 }
 
 section div.containerCard.links {
@@ -512,11 +514,11 @@ section div.containerCard.links a:hover {
 
 .cards .newCard {
   background-color: transparent;
-  width: 350px;
+  width: 330px;
   height: 240px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  margin: 20px  auto;
+  margin: 20px  5px;
 }
 
 .cards .newCard .newCard_inner {
@@ -645,70 +647,187 @@ footer p {
   font-weight: 200;
 }
 
-@-webkit-keyframes eyeCatch {
-  0% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
+@media only screen and (min-width: 550px) {
+  nav {
+    height: 10vh;
+    min-height: 70px;
   }
-  7% {
-    -webkit-transform: translateY(3px);
-            transform: translateY(3px);
+  nav ul, nav ul.visible {
+    top: 9vh;
   }
-  15% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
+  .container {
+    margin-top: 9vh;
   }
-  23% {
-    -webkit-transform: translateY(3px);
-            transform: translateY(3px);
+  header {
+    min-height: 400px;
   }
-  30% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
+  header div:first-child {
+    width: 100%;
   }
-  100% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
+  header div:first-child h1 {
+    font-size: 2.5em;
   }
-}
-
-@keyframes eyeCatch {
-  0% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
+  section h2 {
+    font-size: 9em;
+    margin: 0 10px;
   }
-  7% {
-    -webkit-transform: translateY(3px);
-            transform: translateY(3px);
+  section div.containerCard {
+    margin: 0 30px 70px;
   }
-  15% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
-  }
-  23% {
-    -webkit-transform: translateY(3px);
-            transform: translateY(3px);
-  }
-  30% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
-  }
-  100% {
-    -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
+  #contact .containerCard {
+    max-width: 500px;
   }
 }
 
-header .down {
-  position: absolute;
-  bottom: -7vh;
-  font-size: 3em;
-  left: 48%;
-  color: #7abf7e;
-  text-shadow: 1px 2px 8px #ccc;
-  -webkit-animation: eyeCatch 2s infinite;
-          animation: eyeCatch 2s infinite;
-  z-index: 99;
-  cursor: pointer;
+@media only screen and (min-width: 768px) {
+  .container {
+    margin-top: 50px;
+  }
+  nav {
+    height: 50px;
+  }
+  nav #logo {
+    width: 95px;
+  }
+  nav ul {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 8vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 60%;
+    max-width: 500px;
+  }
+  nav ul li a {
+    font-size: 1.35em;
+  }
+  nav #burger {
+    display: none;
+  }
+  header {
+    height: 85vh;
+    min-height: 600px;
+    margin-bottom: 8vh;
+  }
+  header div:first-child {
+    margin-top: 15vh;
+  }
+  header div:first-child h1 {
+    font-size: 3em;
+  }
+  header div.wave {
+    min-height: 300px;
+  }
+  header .down {
+    display: block;
+    position: absolute;
+    bottom: -4vh;
+    font-size: 3em;
+    left: 48%;
+    color: #7abf7e;
+    -webkit-animation: eyeCatch 2s infinite;
+            animation: eyeCatch 2s infinite;
+    z-index: 99;
+    cursor: pointer;
+  }
+  @-webkit-keyframes eyeCatch {
+    0% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+    7% {
+      -webkit-transform: translateY(3px);
+              transform: translateY(3px);
+    }
+    15% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+    23% {
+      -webkit-transform: translateY(3px);
+              transform: translateY(3px);
+    }
+    30% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+    100% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+  }
+  @keyframes eyeCatch {
+    0% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+    7% {
+      -webkit-transform: translateY(3px);
+              transform: translateY(3px);
+    }
+    15% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+    23% {
+      -webkit-transform: translateY(3px);
+              transform: translateY(3px);
+    }
+    30% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+    100% {
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px);
+    }
+  }
+  section h2 {
+    font-size: 13em;
+    margin: 0 25px;
+    position: relative;
+  }
+  section div.containerCard {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 70px;
+  }
+  section#skills .containerCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section#skills .containerCard > div {
+    width: 50%;
+    padding: 15px;
+  }
+  section#skills .containerCard div.web {
+    border-right: 1px solid #ccc;
+  }
+  section#skills .containerCard div.web::after {
+    display: none;
+  }
+  section#skills .containerCard div.techs img {
+    width: 70px;
+  }
+  section#skills .containerCard div.techs .filling {
+    width: 70px;
+  }
+  section .containerCard.about p {
+    font-size: 1.1em;
+  }
+  section .cards {
+    padding: 0 20px;
+    max-width: 1100px;
+    margin: 0 auto 80px;
+  }
+  section #contact .containerCard.links a {
+    font-size: 5em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
