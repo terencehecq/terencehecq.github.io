@@ -2,14 +2,14 @@
 @import 'hamburgers/hamburgers.scss';
 
 $green: rgb(122, 191, 126);
-$faded_green: rgba(122, 191, 126, 0.6);
+$faded_green: #cae5cb;
 $lightgrey: #f8f8f8;
 
 
 
 /* ------- Début du code de la page ------- */
 
-body{font-family: 'Titillium Web', sans-serif;}
+body{font-family: 'Titillium Web', sans-serif; position: relative;}
 
 nav{
     position:fixed;
@@ -17,7 +17,8 @@ nav{
     left:0;
     display:flex;
     justify-content: space-between;
-    height: 12vh;
+    height: 10vh;
+    min-height: 70px;
     background-color: $green;
     width:100%;
     z-index:100;
@@ -27,11 +28,14 @@ nav{
         align-self: center;
         z-index:102;
         margin-left: 15px;
+        #logoLink{
+            height: 100%;
+        }
     }
 
     ul{
         position: absolute;
-        top: 11.5vh;
+        top: 9.5vh;
         right: -100%;
         text-align:center;
         list-style: none;
@@ -69,7 +73,7 @@ nav{
     }
 
     ul.visible{
-        top: 11.5vh;
+        top: 9.5vh;
         right: 0;
         z-index: 90;
         border-radius: 0 0 20px 20px;
@@ -91,22 +95,28 @@ nav{
 
 .container{
     width: 100%;
-    margin-top: 11.5vh;
+    margin-top: 58px;
 }
 header{
     position:relative;
     width: 100%; 
-    height: 50vh;
+    height: 60vh;
     min-height: 300px;
-    margin-bottom: 5vh;
     display:flex;
     justify-content: space-evenly;
     background-color: rgb(122, 191, 126);
-    padding: 15px;
+    // padding: 15px;
+    background-image: url(../img/wave.svg);
+    background-repeat: no-repeat;
+    background-size: 102%;
+    background-position: 0 101%;
 
     div:first-child{
-        width: 85%;
-        margin: 5% 2%;
+        position: absolute;
+        bottom: 40%;
+        left: 20px;
+        width: 90%;
+        margin-top: 15%;
         
         h1{
             font-size: 2em;
@@ -118,28 +128,25 @@ header{
             span{
                 font-weight: 700;
             }
-        }
-
-        
+        } 
     }
 
     div.wave{
+        display: none;
         position: absolute;
         bottom: -10px;
         left: 0;
         height: 25vh;
         min-height: 50px;
         width: 100%;
-        background-image: url(../img/wave.svg);
-        background-repeat: no-repeat;
-        background-size: 105%;
-        background-position: bottom;
     }
 
     .down{display: none;}
 }
 
 section{
+    min-height: 85vh;
+    padding-top: 50px;
     h2{
         display: block;
         font-size: 6em;
@@ -150,7 +157,7 @@ section{
     }
 
     div.containerCard{
-        margin: 0 20px 50px;
+        margin: 0 20px;
         background-color: $lightgrey;
         border-radius: 10px;
         box-shadow:  8px 8px 15px #dadada, 
@@ -204,23 +211,52 @@ section{
         // -- CONTACT LINKS
         &.links{
             text-align: center;
+            display: flex;
+            justify-content: center;
             a{
-                display: inline-block;
+                display: flex;
+                flex-direction: column;
                 font-size: 4em;
                 margin: 20px;
                 transition: transform .1s ;
+
+                span{
+                    margin-top: 10px;
+                    font-size: .23em;
+                }
             }
             #github{color: black;}
             #linkedin{color: #0073b1;}
+            #cv{color: $green;}
             a:hover{
-                display: inline-block;
+                // display: inline-block;
                 opacity: .7;
-                transform: scale(.97);
+                transform: scale(.98);
+            }
+            div.separate{
+                display: inline-block;
+                align-self:center;
+                width: 1px;
+                height: 100px;
+                background-color: #aaa;
+                margin: 0 20px;
             }
 
         }
         
     }
+
+    &#contact{
+        min-height: 60vh;
+    }
+}
+
+#skills{
+    background-image: url(../img/bg1.svg);
+    background-size: 102%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
 }
 
 .cards{
@@ -431,7 +467,6 @@ footer{
 
 
 @media only screen and (min-width: 550px) {
-
     
     nav{
         height: 10vh;
@@ -449,7 +484,6 @@ footer{
     header{
         min-height: 400px;
         div:first-child{
-            width: 100%;
             h1{
                 font-size: 2.5em;
             }
@@ -474,12 +508,9 @@ footer{
 
 @media only screen and (min-width: 768px) {
 
-    .container{
-        margin-top: 50px;
-    }
-
     nav{
-        height: 50px;
+        // min-height: 60px;
+        height: 8vh;
 
         #logo{
             width: 95px;
@@ -503,10 +534,14 @@ footer{
         }
     }
 
+    .container{
+        margin-top: 7vh;
+    }
+
     header{
-        height: 85vh;
+        height: 90vh;
         min-height: 600px;
-        margin-bottom: 8vh;
+        // margin-bottom: 8vh;
 
         div:first-child{
             margin-top: 15vh;
@@ -523,8 +558,8 @@ footer{
         & .down{
             display: block;
             position:absolute;
-            bottom:-4vh;
-            font-size: 3em;
+            bottom:-2vh;
+            font-size: 3.2em;
             left:48%;
             color: $green;
             // text-shadow: 1px 2px 8px #ccc;
@@ -545,11 +580,13 @@ footer{
 
 
     section {
+        min-height: 100vh;
+        display: flex;
 
         h2{
             font-size: 13em;
             margin: 0 25px;
-            position: relative;
+            position: absolute;
         }
 
         // h2::after{
@@ -565,7 +602,9 @@ footer{
         div.containerCard{
         width: 90%;
         max-width: 900px;
-        margin: 0 auto 70px;
+        margin: 0 auto;
+        height: 50%;
+        align-self: center;
         }
 
         &#skills .containerCard{
@@ -602,11 +641,24 @@ footer{
         .cards{
             padding: 0 20px;
             max-width: 1100px;
-            margin: 0 auto 80px;
+            margin: 200px auto 0;
         }
 
-        #contact .containerCard.links a{
-            font-size: 5em;
+        &#contact {
+            margin-top: 60px;
+            min-height: 85vh;
+
+            .containerCard.links a{
+                font-size: 5em;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    section{
+        h2{
+            font-size: 16em;
         }
     }
 }

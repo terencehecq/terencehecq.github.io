@@ -57,10 +57,10 @@ const skillsPos = document.getElementById("skills").offsetTop;
 
 const smoothElems = [
     [logoLink, 0],
-    [down, skillsPos-100],
+    [down, skillsPos-50],
     [homeLink, 0],
-    [skillsLink, skillsPos-100],
-    [aboutLink, aboutPos-90],
+    [skillsLink, skillsPos-50],
+    [aboutLink, aboutPos-50],
     [myWorkLink, workPos-50],
     [contactLink, contactPos],
 ]

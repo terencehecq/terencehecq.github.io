@@ -149,6 +149,7 @@ a {
 /* ------- Début du code de la page ------- */
 body {
   font-family: 'Titillium Web', sans-serif;
+  position: relative;
 }
 
 nav {
@@ -161,7 +162,8 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 12vh;
+  height: 10vh;
+  min-height: 70px;
   background-color: #7abf7e;
   width: 100%;
   z-index: 100;
@@ -176,9 +178,13 @@ nav #logo {
   margin-left: 15px;
 }
 
+nav #logo #logoLink {
+  height: 100%;
+}
+
 nav ul {
   position: absolute;
-  top: 11.5vh;
+  top: 9.5vh;
   right: -100%;
   text-align: center;
   list-style: none;
@@ -224,7 +230,7 @@ nav ul a:hover::after {
 }
 
 nav ul.visible {
-  top: 11.5vh;
+  top: 9.5vh;
   right: 0;
   z-index: 90;
   border-radius: 0 0 20px 20px;
@@ -244,15 +250,14 @@ nav #burger button {
 
 .container {
   width: 100%;
-  margin-top: 11.5vh;
+  margin-top: 58px;
 }
 
 header {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   min-height: 300px;
-  margin-bottom: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,12 +265,18 @@ header {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   background-color: #7abf7e;
-  padding: 15px;
+  background-image: url(../img/wave.svg);
+  background-repeat: no-repeat;
+  background-size: 102%;
+  background-position: 0 101%;
 }
 
 header div:first-child {
-  width: 85%;
-  margin: 5% 2%;
+  position: absolute;
+  bottom: 40%;
+  left: 20px;
+  width: 90%;
+  margin-top: 15%;
 }
 
 header div:first-child h1 {
@@ -285,33 +296,35 @@ header div:first-child h1 span {
 }
 
 header div.wave {
+  display: none;
   position: absolute;
   bottom: -10px;
   left: 0;
   height: 25vh;
   min-height: 50px;
   width: 100%;
-  background-image: url(../img/wave.svg);
-  background-repeat: no-repeat;
-  background-size: 105%;
-  background-position: bottom;
 }
 
 header .down {
   display: none;
 }
 
+section {
+  min-height: 85vh;
+  padding-top: 50px;
+}
+
 section h2 {
   display: block;
   font-size: 6em;
   font-weight: 900;
-  color: rgba(122, 191, 126, 0.6);
+  color: #cae5cb;
   margin: 0 5px;
   line-height: .8em;
 }
 
 section div.containerCard {
-  margin: 0 20px 50px;
+  margin: 0 20px;
   background-color: #f8f8f8;
   border-radius: 10px;
   -webkit-box-shadow: 8px 8px 15px #dadada,  -8px -8px 15px #ffffff;
@@ -369,16 +382,33 @@ section div.containerCard.about p {
 
 section div.containerCard.links {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 section div.containerCard.links a {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 4em;
   margin: 20px;
   -webkit-transition: -webkit-transform .1s;
   transition: -webkit-transform .1s;
   transition: transform .1s;
   transition: transform .1s, -webkit-transform .1s;
+}
+
+section div.containerCard.links a span {
+  margin-top: 10px;
+  font-size: .23em;
 }
 
 section div.containerCard.links #github {
@@ -389,11 +419,36 @@ section div.containerCard.links #linkedin {
   color: #0073b1;
 }
 
+section div.containerCard.links #cv {
+  color: #7abf7e;
+}
+
 section div.containerCard.links a:hover {
-  display: inline-block;
   opacity: .7;
-  -webkit-transform: scale(0.97);
-          transform: scale(0.97);
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+section div.containerCard.links div.separate {
+  display: inline-block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 1px;
+  height: 100px;
+  background-color: #aaa;
+  margin: 0 20px;
+}
+
+section#contact {
+  min-height: 60vh;
+}
+
+#skills {
+  background-image: url(../img/bg1.svg);
+  background-size: 102%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .cards {
@@ -661,9 +716,6 @@ footer p {
   header {
     min-height: 400px;
   }
-  header div:first-child {
-    width: 100%;
-  }
   header div:first-child h1 {
     font-size: 2.5em;
   }
@@ -680,11 +732,8 @@ footer p {
 }
 
 @media only screen and (min-width: 768px) {
-  .container {
-    margin-top: 50px;
-  }
   nav {
-    height: 50px;
+    height: 8vh;
   }
   nav #logo {
     width: 95px;
@@ -709,10 +758,12 @@ footer p {
   nav #burger {
     display: none;
   }
+  .container {
+    margin-top: 7vh;
+  }
   header {
-    height: 85vh;
+    height: 90vh;
     min-height: 600px;
-    margin-bottom: 8vh;
   }
   header div:first-child {
     margin-top: 15vh;
@@ -726,8 +777,8 @@ footer p {
   header .down {
     display: block;
     position: absolute;
-    bottom: -4vh;
-    font-size: 3em;
+    bottom: -2vh;
+    font-size: 3.2em;
     left: 48%;
     color: #7abf7e;
     -webkit-animation: eyeCatch 2s infinite;
@@ -787,15 +838,25 @@ footer p {
               transform: translateY(-3px);
     }
   }
+  section {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   section h2 {
     font-size: 13em;
     margin: 0 25px;
-    position: relative;
+    position: absolute;
   }
   section div.containerCard {
     width: 90%;
     max-width: 900px;
-    margin: 0 auto 70px;
+    margin: 0 auto;
+    height: 50%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   section#skills .containerCard {
     display: -webkit-box;
@@ -824,10 +885,20 @@ footer p {
   section .cards {
     padding: 0 20px;
     max-width: 1100px;
-    margin: 0 auto 80px;
+    margin: 200px auto 0;
   }
-  section #contact .containerCard.links a {
+  section#contact {
+    margin-top: 60px;
+    min-height: 85vh;
+  }
+  section#contact .containerCard.links a {
     font-size: 5em;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  section h2 {
+    font-size: 16em;
   }
 }
 /*# sourceMappingURL=style.css.map */
