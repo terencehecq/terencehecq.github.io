@@ -251,6 +251,9 @@ nav #burger button {
 .container {
   width: 100%;
   margin-top: 58px;
+  background-image: url(../img/thread.svg);
+  background-size: contain;
+  background-position: 0 0;
 }
 
 header {
@@ -258,29 +261,19 @@ header {
   width: 100%;
   height: 60vh;
   min-height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   background-color: #7abf7e;
-  background-image: url(../img/wave.svg);
-  background-repeat: no-repeat;
-  background-size: 102%;
-  background-position: 0 101%;
 }
 
 header div:first-child {
   position: absolute;
-  bottom: 40%;
+  top: 15%;
   left: 20px;
   width: 90%;
-  margin-top: 15%;
+  z-index: 50;
 }
 
-header div:first-child h1 {
-  font-size: 2em;
+header div:first-child p {
+  font-size: 2.2rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   z-index: 200;
@@ -288,21 +281,49 @@ header div:first-child h1 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin: auto;
+  margin: 0;
+  line-height: 2.7rem;
 }
 
-header div:first-child h1 span {
+header div:first-child p strong {
   font-weight: 700;
 }
 
-header div.wave {
-  display: none;
+header div:first-child h1 {
+  font-size: 1.1em;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0;
+  font-weight: 200;
+}
+
+header div.myPic {
   position: absolute;
-  bottom: -10px;
-  left: 0;
-  height: 25vh;
-  min-height: 50px;
+  right: 0;
+  bottom: 10px;
+  width: 50%;
+  max-width: 240px;
+  z-index: 40;
+}
+
+header div.myPic img {
   width: 100%;
+}
+
+header div.wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  min-height: 20vh;
+  background-image: url(../img/wave.svg);
+  background-repeat: no-repeat;
+  background-size: 102%;
+  background-position: 0 101%;
+  z-index: 45;
 }
 
 header .down {
@@ -327,8 +348,8 @@ section div.containerCard {
   margin: 0 20px;
   background-color: #f8f8f8;
   border-radius: 10px;
-  -webkit-box-shadow: 8px 8px 15px #dadada,  -8px -8px 15px #ffffff;
-          box-shadow: 8px 8px 15px #dadada,  -8px -8px 15px #ffffff;
+  -webkit-box-shadow: 8px 8px 15px #dadada,  -4px -4px 9px #ffffff;
+          box-shadow: 8px 8px 15px #dadada,  -4px -4px 9px #ffffff;
   padding: 20px;
 }
 
@@ -442,13 +463,6 @@ section div.containerCard.links div.separate {
 
 section#contact {
   min-height: 60vh;
-}
-
-#skills {
-  background-image: url(../img/bg1.svg);
-  background-size: 102%;
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .cards {
@@ -716,8 +730,12 @@ footer p {
   header {
     min-height: 400px;
   }
+  header div:first-child p {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
   header div:first-child h1 {
-    font-size: 2.5em;
+    font-size: 1.5rem;
   }
   section h2 {
     font-size: 9em;
@@ -754,6 +772,7 @@ footer p {
   }
   nav ul li a {
     font-size: 1.35em;
+    font-weight: 400;
   }
   nav #burger {
     display: none;
@@ -766,10 +785,19 @@ footer p {
     min-height: 600px;
   }
   header div:first-child {
-    margin-top: 15vh;
+    left: 8%;
+  }
+  header div:first-child p {
+    font-size: 4rem;
+    line-height: 4.5rem;
   }
   header div:first-child h1 {
-    font-size: 3em;
+    font-size: 1.8em;
+  }
+  header div.myPic {
+    right: 4%;
+    bottom: 50px;
+    max-width: 350px;
   }
   header div.wave {
     min-height: 300px;
@@ -777,7 +805,7 @@ footer p {
   header .down {
     display: block;
     position: absolute;
-    bottom: -2vh;
+    bottom: -3vh;
     font-size: 3.2em;
     left: 48%;
     color: #7abf7e;
@@ -862,6 +890,7 @@ footer p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-top: 60px;
   }
   section#skills .containerCard > div {
     width: 50%;
@@ -897,6 +926,17 @@ footer p {
 }
 
 @media only screen and (min-width: 960px) {
+  header div:first-child {
+    top: 20%;
+    left: 10%;
+  }
+  header div:first-child p {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+  header div:first-child h1 {
+    font-size: 2.2rem;
+  }
   section h2 {
     font-size: 16em;
   }

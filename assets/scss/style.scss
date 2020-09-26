@@ -89,57 +89,81 @@ nav{
     }
 }
 
-// #myPic{
-//     width: 200px;
-// }
 
 .container{
     width: 100%;
     margin-top: 58px;
+    background-image: url(../img/thread.svg);
+    background-size: contain;
+    // background-repeat: no-repeat;
+    background-position: 0 0;
 }
 header{
     position:relative;
     width: 100%; 
     height: 60vh;
     min-height: 300px;
-    display:flex;
-    justify-content: space-evenly;
+    // display:flex;
+    // justify-content: space-evenly;
     background-color: rgb(122, 191, 126);
     // padding: 15px;
-    background-image: url(../img/wave.svg);
-    background-repeat: no-repeat;
-    background-size: 102%;
-    background-position: 0 101%;
 
     div:first-child{
         position: absolute;
-        bottom: 40%;
+        top: 15%;
         left: 20px;
         width: 90%;
-        margin-top: 15%;
+        z-index: 50;
         
-        h1{
-            font-size: 2em;
+        p{
+            font-size: 2.2rem;
             font-weight: 400;
             color:rgba(255,255,255,0.9);
             z-index:200;
             user-select: none;
-            margin: auto;
-            span{
+            margin: 0;
+            line-height: 2.7rem;
+            strong{
                 font-weight: 700;
             }
         } 
+        h1{
+            font-size: 1.1em;
+            color:white;
+            user-select: none;
+            margin: 0;
+            font-weight: 200;
+        }
+    }
+
+
+    div.myPic{
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        width: 50%;
+        max-width: 240px;
+        z-index: 40;
+        img{
+            width: 100%;
+            // filter: grayscale(100%);
+        }
     }
 
     div.wave{
-        display: none;
         position: absolute;
-        bottom: -10px;
+        bottom: -1px;
         left: 0;
-        height: 25vh;
-        min-height: 50px;
         width: 100%;
+        min-height: 20vh;
+        background-image: url(../img/wave.svg);
+        background-repeat: no-repeat;
+        background-size: 102%;
+        background-position: 0 101%;
+        z-index: 45;
     }
+
+
 
     .down{display: none;}
 }
@@ -161,7 +185,7 @@ section{
         background-color: $lightgrey;
         border-radius: 10px;
         box-shadow:  8px 8px 15px #dadada, 
-                    -8px -8px 15px #ffffff;
+                    -4px -4px 9px #ffffff;
         padding: 20px;
 
         div.web{
@@ -251,13 +275,6 @@ section{
     }
 }
 
-#skills{
-    background-image: url(../img/bg1.svg);
-    background-size: 102%;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-
-}
 
 .cards{
     display:flex;
@@ -484,8 +501,12 @@ footer{
     header{
         min-height: 400px;
         div:first-child{
+            p{
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
             h1{
-                font-size: 2.5em;
+                font-size: 1.5rem;
             }
         } 
     }
@@ -526,6 +547,7 @@ footer{
             max-width: 500px;
             li a{
                 font-size: 1.35em;
+                font-weight: 400;
             }
         }
 
@@ -544,11 +566,21 @@ footer{
         // margin-bottom: 8vh;
 
         div:first-child{
-            margin-top: 15vh;
-            
-            h1{
-                font-size: 3em;
+            // top: 10%;
+            left: 8%;
+            p{
+                font-size: 4rem;
+                line-height: 4.5rem;
             }
+            h1{
+                font-size: 1.8em;
+            }
+        }
+
+        div.myPic{
+            right: 4%;
+            bottom: 50px;
+            max-width: 350px;
         }
 
         div.wave{
@@ -558,11 +590,10 @@ footer{
         & .down{
             display: block;
             position:absolute;
-            bottom:-2vh;
+            bottom:-3vh;
             font-size: 3.2em;
             left:48%;
             color: $green;
-            // text-shadow: 1px 2px 8px #ccc;
             animation: eyeCatch 2s infinite;
             z-index:99;
             cursor: pointer;
@@ -589,16 +620,6 @@ footer{
             position: absolute;
         }
 
-        // h2::after{
-        //     content: "SKILLS";
-        //     font-size: 2.3em;
-        //     position: absolute;
-        //     color: rgba(122, 191, 126, 0.2) ;
-        //     left: 70px;
-        //     top: 150px;
-        //     z-index: -1;
-        // }
-
         div.containerCard{
         width: 90%;
         max-width: 900px;
@@ -609,6 +630,7 @@ footer{
 
         &#skills .containerCard{
             display: flex;
+            margin-top: 60px;
 
             &>div{
                 width: 50%;
@@ -656,6 +678,20 @@ footer{
 }
 
 @media only screen and (min-width: 960px) {
+
+    header{
+        div:first-child {
+            top: 20%;
+            left: 10%;
+            p{
+            font-size: 5rem;
+            line-height: 5.5rem;
+            }
+            h1{
+                font-size: 2.2rem;
+            }
+        }
+    }
     section{
         h2{
             font-size: 16em;
