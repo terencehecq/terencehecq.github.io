@@ -386,6 +386,7 @@ section div.containerCard div.techs {
 
 section div.containerCard div.techs img {
   width: 60px;
+  height: 60px;
   margin: 15px 10px;
 }
 
@@ -902,6 +903,7 @@ footer p {
   }
   section#skills .containerCard div.techs img {
     width: 70px;
+    height: 70px;
   }
   section#skills .containerCard div.techs .filling {
     width: 70px;
