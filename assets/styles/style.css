@@ -180,6 +180,7 @@ nav #logo {
 
 nav #logo #logoLink {
   height: 100%;
+  cursor: pointer;
 }
 
 nav ul {
@@ -251,9 +252,6 @@ nav #burger button {
 .container {
   width: 100%;
   margin-top: 58px;
-  background-image: url(../img/thread.svg);
-  background-size: contain;
-  background-position: 0 0;
 }
 
 header {

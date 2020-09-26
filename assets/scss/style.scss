@@ -30,6 +30,7 @@ nav{
         margin-left: 15px;
         #logoLink{
             height: 100%;
+            cursor: pointer;
         }
     }
 
@@ -93,10 +94,10 @@ nav{
 .container{
     width: 100%;
     margin-top: 58px;
-    background-image: url(../img/thread.svg);
-    background-size: contain;
-    // background-repeat: no-repeat;
-    background-position: 0 0;
+    // background-image: url(../img/thread.svg);
+    // background-size: contain;
+    // // background-repeat: no-repeat;
+    // background-position: 0 0;
 }
 header{
     position:relative;
