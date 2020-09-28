@@ -304,7 +304,9 @@ header div.myPic {
   bottom: 10px;
   width: 50%;
   max-width: 240px;
+  max-height: 55vh;
   z-index: 40;
+  overflow: hidden;
 }
 
 header div.myPic img {
@@ -737,6 +739,10 @@ footer p {
   header div:first-child h1 {
     font-size: 1.5rem;
   }
+  header div.myPic {
+    max-width: 350px;
+    max-height: 58vh;
+  }
   section h2 {
     font-size: 9em;
     margin: 0 10px;
@@ -796,8 +802,9 @@ footer p {
   }
   header div.myPic {
     right: 4%;
-    bottom: 50px;
+    bottom: 30px;
     max-width: 350px;
+    max-height: 80vh;
   }
   header div.wave {
     min-height: 300px;

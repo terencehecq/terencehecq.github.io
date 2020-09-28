@@ -144,7 +144,9 @@ header{
         bottom: 10px;
         width: 50%;
         max-width: 240px;
+        max-height: 55vh;
         z-index: 40;
+        overflow: hidden;
         img{
             width: 100%;
             // filter: grayscale(100%);
@@ -511,7 +513,11 @@ footer{
             h1{
                 font-size: 1.5rem;
             }
-        } 
+        }
+        div.myPic{
+            max-width: 350px;
+            max-height: 58vh;
+        }
     }
 
     section {
@@ -582,8 +588,9 @@ footer{
 
         div.myPic{
             right: 4%;
-            bottom: 50px;
+            bottom: 30px;
             max-width: 350px;
+            max-height: 80vh;
         }
 
         div.wave{
